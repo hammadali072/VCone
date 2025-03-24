@@ -2,13 +2,13 @@ import './App.css';
 
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import LandingPage from './pages/landingpage';
+import HomePage from './pages/homepage';
 
 function App() {
   return (
     <>
       <Header />
-      <LandingPage />
+      <HomePage />
       <Footer />
     </>
   );
