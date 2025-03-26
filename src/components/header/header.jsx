@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { menuData } from '../../data';
 import Vconelogo from '../../assets/logo-v-Cone.svg'
 const Header = () => {
     return (
@@ -13,24 +14,13 @@ const Header = () => {
                     </div>
                     <div>
                         <ul className='flex flex-row gap-6'>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Home</Link>
-                            </li>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Plugins</Link>
-                            </li>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Themes</Link>
-                            </li>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Templates</Link>
-                            </li>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Blog</Link>
-                            </li>
-                            <li >
-                                <Link to='/' className='.heading-h4-m text-whitecolor hover:text-primarycolor'>Support</Link>
-                            </li>
+                            {
+                                menuData.map((item, index, link) => (
+                                    <li key={index.id}>
+                                        <Link to={link.path} className='heading-h4-m text-whitecolor hover:text-primarycolor'>{item.title}</Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                     <div className='contact_us'>
